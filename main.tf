@@ -17,5 +17,6 @@ provider "azurerm" {
 }
 # Configure Databricks Provider
 provider "databricks" {
-    profile = "DEFAULT"
+    host  = var.databricks_host
+    token = var.token
 }

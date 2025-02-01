@@ -1,11 +1,11 @@
 # Create a Databricks cluster
 resource "databricks_cluster" "mydbscluster" {
-  cluster_name            = var.cluster_name
+  cluster_name            = "terraform_cluster"
   spark_version           = "16.1.x-cpu-ml-scala2.12"
   node_type_id            = "Standard_DS3_v2"
-  autotermination_minutes = var.cluster_autotermination_minutes
-  num_workers = var.cluster_num_workers
-  data_security_mode = var.cluster_data_security_mode
+  autotermination_minutes = 20
+  num_workers             = 0
+  data_security_mode      = "SINGLE_USER"
   custom_tags = {
     "admin" = "amyphung.dev@gmail.com"
   }
